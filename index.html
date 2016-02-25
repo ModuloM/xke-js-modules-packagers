@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>L’évolution des modules et des packager front</title>
+  <title>L’évolution des modules et des packagers front</title>
 
   <meta name="description" content="L’évolution des modules et des packager front">
   <meta name="author" content="Anthony Ginier & Antoine Le Taxin">
@@ -34,7 +34,7 @@
   <div class="slides">
 
     <section>
-      <h1>Modules & <br>packager JS</h1>
+      <h1>Modules & <br>packagers JS</h1>
 
       <h3>Petit historique et remise en perspective</h3>
 
@@ -106,7 +106,7 @@ var APP = APP || {};
     </section>
 
     <section>
-      <h4>Pour gérer les modules & les dépendances, tout dans le html ..!</h4>
+      <h4>Tout dans le html ..!</h4>
 
       <pre><code class="html" data-trim>
 &lt;link rel="stylesheet" href="css/bootstrap.min.css"/&gt;
@@ -224,7 +224,7 @@ gulp.task('bundle:js', function() {
         <div class="fragment">
           <ul>
             <li><span class="medium">Une function unique <em>define</em> accessible comme variable globale permet de définir un module.</span></li>
-            <li><span class="medium">Les modules sont chargés de manière asynchrones, c’est la grande force d’AMD.</span></li>
+            <li><span class="medium">Les modules sont chargés de manière asynchrone, c’est la grande force d’AMD.</span></li>
           </ul>
         </div>
         <pre class="fragment"><code class="js" data-trim>
@@ -251,7 +251,7 @@ define({
             <li><span class="medium">Une fonction <em>require</em> qui permet l’import d’un module dans le scope.</span></li>
             <li><span class="medium">L’objet <em>module</em>, qui permet l’export dans le scope courant.</span></li>
             <li><span class="medium">L’import des modules est statique.</span></li>
-            <li><span class="medium">La simplicité de la syntaxe et le fait que nodeJS est retenu une syntaxe approchante l’a rendu très populaire.</span></li>
+            <li><span class="medium">La simplicité de la syntaxe et le fait que nodeJS est retenu une solution approchante l’a rendu très populaire.</span></li>
           </ul>
         </div>
         <pre class="fragment"><code class="js" data-trim>
@@ -294,7 +294,7 @@ module.exports = {
     define(['moduleB'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // Node. Does not work with strict CommonJS
-    module.exports = factory(require('b'));
+    module.exports = factory(require('moduleB'));
   } else {
     // Browser globals (root is window)
     root.returnExports = factory(root.moduleB);
@@ -315,12 +315,12 @@ module.exports = {
     </section>
 
     <section>
-      <h4>Module ES 2015 - export</h4>
+      <h4>Module ES 2015</h4>
       <div style="text-align: left;">
         <div class="fragment">
           <ul>
             <li><span class="medium">Un standard aux nombreuses possibilités !</span></li>
-            <li><span class="medium">Utilisable dès maintenant en utilisant <a href="https://babeljs.io/">Babel</a></span></li>
+            <li><span class="medium">Utilisable dès maintenant grâce à <a href="https://babeljs.io/">Babel</a></span></li>
           </ul>
         </div>
         <pre class="fragment"><code class="js" data-trim>
